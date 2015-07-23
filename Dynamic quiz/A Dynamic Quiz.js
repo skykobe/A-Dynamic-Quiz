@@ -1,13 +1,14 @@
 			$(document).ready(function(e) {
               var AllQuestion = {
-			  		question : ['1 + 1 = ?','广工原名是什么？','超级厉害的ADC-Uzi叫什么名字'],
-					choice : [['A.1','B.2','C.3'],['A.广东供热大学','B.宇宙工业大学','C.广东工业大学'],['A.简自豪','不知道','高地平']],
-					correct : ['B','B','A']
+			  		question : ['KISS是什么词？?','一本书放在地上什么地方你跨不过去？','一个猎人，一只枪，抢射程100米，有一个狼离猎人200米，猎人和狼都不动，可是猎人却开枪把狼打死了？','猩猩最讨厌什么线？','上课的时候，小猫、小狗、小鸡谁最先被叫起来背书？'],
+					choice : [['A.动词','B.形容词','C.连词'],['A.墙角里','B.茅坑中','C.讲台上'],['A.狼心脏病了','B.不知道','C.枪长100米'],['A.直线','B.平行线','C.横线'],['A.小猫','B.小狗','C.小鸡']],
+					correct : ['C','A','C','B','B']
 			  }
 			  var num = 0;
 			  var point = 0;
 			  var Qnum = AllQuestion.question.length;
 			  var hisChoice = [];
+			  var fullMark = AllQuestion.question.length * 2;
 			  $("#1").text(AllQuestion.question[num]);
 			  $("#2").text(AllQuestion.choice[num][0]);
 			  $("#3").text(AllQuestion.choice[num][1]);
@@ -72,6 +73,7 @@
 				  if(num == Qnum)
 				  {
 					  alert('你这次的测验成绩为：'+point+'分');
+					  showPKQ();
 				  }
 				  else 
 				  {
@@ -98,5 +100,21 @@
                  });
 			}
 			
-			
+			function showPKQ() {
+				if(point < 0.5*fullMark)
+				{
+					$('img').attr('src','1.jpg').slideDown();
+					$("span").text('渣渣！！');
+				}
+				else if(point < fullMark)
+				{
+					$('img').attr('src','2.jpg').slideDown();
+					$("span").text('GOOD JOB');
+				}
+				else
+				{
+					$('img').attr('src','3.jpg').slideDown();
+					$("span").text('要不要那么厉害，这都一百分');
+				}
+			}
             });
