@@ -8,11 +8,12 @@
 			  var point = 0;
 			  var Qnum = AllQuestion.question.length;
 			  var hisChoice = [];
-			  var fullMark = AllQuestion.question.length * 2;
+			  var fullMark = Qnum * 2;
 			  $("#1").text(AllQuestion.question[num]);
 			  $("#2").text(AllQuestion.choice[num][0]);
 			  $("#3").text(AllQuestion.choice[num][1]);
 			  $("#4").text(AllQuestion.choice[num][2]);
+			  $("#qnum").text('1/'+Qnum);
 			  
 			  $("[type='checkbox']").each(function(index, element) {
 					$(this).click( function() {
@@ -37,7 +38,7 @@
 							num++;
 							ChangeQues();	
 						}
-						//hisChoice.push($(this).val());
+						$("#qnum").text(num+1+'/'+Qnum);
 					}
                 });;
 				ClearChoice(num);
@@ -45,6 +46,7 @@
 			  
 			  $("#last").click( function() {
 				  num = num - 1;
+				  $("#qnum").text(num+1+'/'+Qnum);
 				  ClearChoice(num);
 				  $("[type='checkbox']").each(function(index, element) {
                   		if($(this).prop('checked')) 
@@ -57,30 +59,21 @@
 				  {
 						  $("#next").val('下一题');
 				  }
-			  	 /*$("[type='checkbox']").each(function(index, element) {
-                  		if($(this).val() == hisChoice[num])
-						{
-							$(this).prop('checked',true);						
-						}
-                 });*/
-				 $("#1").text(AllQuestion.question[num]);
-			     $("#2").text(AllQuestion.choice[num][0]);
-			     $("#3").text(AllQuestion.choice[num][1]);
-			     $("#4").text(AllQuestion.choice[num][2]);
+				 ChangeQues()
 			  });
 			  
 			  function ChangeQues() {
 				  if(num == Qnum)
 				  {
-					  alert('你这次的测验成绩为：'+point+'分');
+					  //alert('你这次的测验成绩为：'+point+'分');
 					  showPKQ();
 				  }
 				  else 
 				  {
-					  $("#1").text(AllQuestion.question[num]);
-			  		  $("#2").text(AllQuestion.choice[num][0]);
-					  $("#3").text(AllQuestion.choice[num][1]);
-					  $("#4").text(AllQuestion.choice[num][2]);
+					  $("#1").text(AllQuestion.question[num]).fadeIn();
+			  		  $("#2").text(AllQuestion.choice[num][0]).fadeIn();
+					  $("#3").text(AllQuestion.choice[num][1]).fadeIn();
+					  $("#4").text(AllQuestion.choice[num][2]).fadeIn();
 					  if(num == Qnum-1)
 					  {
 						  $("#next").val('交卷');
@@ -103,18 +96,21 @@
 			function showPKQ() {
 				if(point < 0.5*fullMark)
 				{
+					$(".frame").fadeOut();
 					$('img').attr('src','1.jpg').slideDown();
-					$("span").text('渣渣！！');
+					$("span#word").text('渣渣！！~~~~你的分数是：' + point + '分');
 				}
 				else if(point < fullMark)
 				{
+					$(".frame").fadeOut();
 					$('img').attr('src','2.jpg').slideDown();
-					$("span").text('GOOD JOB');
+					$("span#word").text('GOOD JOB！~~~~你的分数是：' + point + '分');
 				}
 				else
 				{
+					$(".frame").fadeOut();
 					$('img').attr('src','3.jpg').slideDown();
-					$("span").text('要不要那么厉害，这都一百分');
+					$("span#word").text('要不要那么厉害，这都一百分~~~~你的分数是：' + point + '分');
 				}
 			}
             });
