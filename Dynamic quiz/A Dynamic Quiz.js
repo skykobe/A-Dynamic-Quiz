@@ -63,17 +63,20 @@
 			  });
 			  
 			  function ChangeQues() {
+				  $("#1").css('display','none');
+				  $("#2").css('display','none');
+				  $("#3").css('display','none');
+				  $("#4").css('display','none');
 				  if(num == Qnum)
 				  {
-					  //alert('你这次的测验成绩为：'+point+'分');
 					  showPKQ();
 				  }
 				  else 
 				  {
-					  $("#1").text(AllQuestion.question[num]).fadeIn();
-			  		  $("#2").text(AllQuestion.choice[num][0]).fadeIn();
-					  $("#3").text(AllQuestion.choice[num][1]).fadeIn();
-					  $("#4").text(AllQuestion.choice[num][2]).fadeIn();
+					  $("#1").text(AllQuestion.question[num]).fadeIn(1000);
+			  		  $("#2").text(AllQuestion.choice[num][0]).fadeIn(1000);
+					  $("#3").text(AllQuestion.choice[num][1]).fadeIn(1000);
+					  $("#4").text(AllQuestion.choice[num][2]).fadeIn(1000);
 					  if(num == Qnum-1)
 					  {
 						  $("#next").val('交卷');
@@ -96,19 +99,19 @@
 			function showPKQ() {
 				if(point < 0.5*fullMark)
 				{
-					$(".frame").fadeOut();
+					$(".frame").fadeOut(100);
 					$('img').attr('src','1.jpg').slideDown();
 					$("span#word").text('渣渣！！~~~~你的分数是：' + point + '分');
 				}
 				else if(point < fullMark)
 				{
-					$(".frame").fadeOut();
+					$(".frame").fadeOut(100);
 					$('img').attr('src','2.jpg').slideDown();
 					$("span#word").text('GOOD JOB！~~~~你的分数是：' + point + '分');
 				}
 				else
 				{
-					$(".frame").fadeOut();
+					$(".frame").fadeOut(100);
 					$('img').attr('src','3.jpg').slideDown();
 					$("span#word").text('要不要那么厉害，这都一百分~~~~你的分数是：' + point + '分');
 				}
