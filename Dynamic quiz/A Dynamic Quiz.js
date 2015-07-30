@@ -1,9 +1,14 @@
 			$(document).ready(function(e) {
-              var AllQuestion = {
-			  		question : ['KISS是什么词？?','一本书放在地上什么地方你跨不过去？','一个猎人，一只枪，抢射程100米，有一个狼离猎人200米，猎人和狼都不动，可是猎人却开枪把狼打死了？','猩猩最讨厌什么线？','上课的时候，小猫、小狗、小鸡谁最先被叫起来背书？'],
-					choice : [['A.动词','B.形容词','C.连词'],['A.墙角里','B.茅坑中','C.讲台上'],['A.狼心脏病了','B.不知道','C.枪长100米'],['A.直线','B.平行线','C.横线'],['A.小猫','B.小狗','C.小鸡']],
-					correct : ['C','A','C','B','B']
+			  var XHR = new XMLHttpRequest();
+			  XHR.onload = function() {
+				  Question();
 			  }
+			XHR.open("get","Question.json",true);
+			XHR.send();
+			
+			function Question()
+			{
+			  var AllQuestion = JSON.parse(XHR.responseText);
 			  var num = 0;
 			  var point = 0;
 			  var Qnum = AllQuestion.question.length;
@@ -73,10 +78,10 @@
 				  }
 				  else 
 				  {
-					  $("#1").text(AllQuestion.question[num]).fadeIn(1000);
-			  		  $("#2").text(AllQuestion.choice[num][0]).fadeIn(1000);
-					  $("#3").text(AllQuestion.choice[num][1]).fadeIn(1000);
-					  $("#4").text(AllQuestion.choice[num][2]).fadeIn(1000);
+					  $("#1").text(AllQuestion.question[num]).fadeIn(500);
+			  		  $("#2").text(AllQuestion.choice[num][0]).fadeIn(500);
+					  $("#3").text(AllQuestion.choice[num][1]).fadeIn(500);
+					  $("#4").text(AllQuestion.choice[num][2]).fadeIn(500);
 					  if(num == Qnum-1)
 					  {
 						  $("#next").val('交卷');
@@ -115,5 +120,6 @@
 					$('img').attr('src','3.jpg').slideDown();
 					$("span#word").text('要不要那么厉害，这都一百分~~~~你的分数是：' + point + '分');
 				}
+							}
 			}
             });
