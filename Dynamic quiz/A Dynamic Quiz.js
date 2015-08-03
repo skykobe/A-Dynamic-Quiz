@@ -1,4 +1,4 @@
-			$(document).ready(function(e) {
+		//$(document).ready(function(e) {
 				var AllCookie = document.cookie ;
 				var T_P = AllCookie.indexOf('=');
 				if(T_P+1 != AllCookie.length && T_P !=- 1) { //直接登入
@@ -76,8 +76,8 @@
 					$("#LogSign").fadeIn(); 
 					});  
 				document.getElementById("LogSign").style.display = "none";
-				
 				$("#signPage").fadeIn(1000);  
+				
 			  	$("#ToSign").click( function() {
 					var user = $("#_user").val();
 					var password = $("#_password").val();
@@ -241,4 +241,3 @@
 				}
 				
 				}
-            });
