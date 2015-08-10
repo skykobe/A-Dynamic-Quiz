@@ -37,7 +37,18 @@ body {
 	border-radius: 10px;
 	height: 240px;
 	text-align: left;
-	display: none;
+    /*display: none;*/
+}
+
+#t_cont {
+    display: none;
+}
+
+.ChoiceFrame {
+    /*margin-left: auto;
+    margin-right: auto;
+    height: 20px;*/
+    display: none;
 }
 
 div p {
@@ -50,7 +61,6 @@ input {
 	margin-bottom: 10px;
 }
 
-
 .que {
 	font-family: "Courier New", Courier, monospace;
 	font-weight: bolder;
@@ -60,7 +70,7 @@ input {
 img {
 	margin: 0px auto;
 	padding: 8px;
-	height: 220px;
+    height: 300px;
 	display: none;
 }
 
@@ -100,6 +110,11 @@ img {
 	font-family:"Courier New", Courier, monospace;
 }
 
+#word {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
 #CheckOut {
 	height: 30px;
 	display: none;
@@ -113,21 +128,21 @@ img {
 	width: 200px;
 }
 
-ul {
+ul#menu {
 	position: absolute;
-	top: -10px;
+    top: 5px;
 	list-style-type: none;
 	display: none 
 }
 
-ul li {
+ul#menu li {
 	padding: 3px;
 	border: 2px #666666 solid;
 	float: left;
 	margin-right: 10px;
 }
 
-ul li:hover {
+ul#menu li:hover {
 	background-color: #666;
 }
 
@@ -135,3 +150,18 @@ li a {
 	text-decoration: none;
 	color: #000
 }
+
+[href="#Ques_1"] {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.rina {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    height: 450px;
+    display: none;
+}
+
