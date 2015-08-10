@@ -1,0 +1,17 @@
+{
+    "question": [
+        "color:#666666;可缩写为什么?",
+        " a:hover表示超链接文字在（）时的状态。",
+        "下列哪个对象是用来代表特定的窗口URL信息",
+        " CSS中ID选择符在定义的前面要有指示符",
+        "在jquery中下面哪个是用来追加到指定元素的末尾的？"
+    ],
+    "choice": [
+        ["A. color:#666", "B. color:#6", "C. 不能缩写"],
+        ["A. 鼠标按下", "B. 鼠标经过", "C. 鼠标放上去"],
+        ["A. location", "B. history", "C. form"],
+        ["A. .", "B. #", "C. 不需要"],
+        ["A. after", "B. append", "C. insertAfter"]
+    ],
+    "correct": [ "A", "C", "A", "B", "C" ]
+}

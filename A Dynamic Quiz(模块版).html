@@ -1,0 +1,106 @@
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>QUIZ</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/A Dynamic Quiz.css" type="text/css"/>
+<body style="background-color: #c1e2b3">
+
+<span id="_word"></span>
+
+<div class="item"><input id="CheckOut" type="image" src="resource/img/225300173.jpg"/>&nbsp;
+    <ul id="menu">
+        <li><a href="#">暂没开放</a></li>
+        <li><a href="#" id="over">退出</a></li>
+    </ul>
+</div>
+
+<div class="out">
+    <h1 align="center">A Dynamic Quiz</h1>
+
+    <div id="signPage">
+        <table cellpadding="-5" align="center">
+            <tr>
+                <th valign="top">用户：</th>
+                <td><input type="text" id="_user"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="text-align:left"><span id="check_user">*由字母，数字构成，不多于8个字符</span></td>
+            </tr>
+            <tr>
+                <th valign="top">密码：</th>
+                <td><input type="password" id="_password"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="text-align:left"><span id="check_password">*由字母，数字构成，不多于10个字符</span></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="提交注册" id="ToSign"/></td>
+                <td><input type="button" id="cancle" value="取消"/></td>
+            </tr>
+        </table>
+    </div>
+    <div id="LogSign">
+        <table cellpadding="5" align="center">
+            <tr>
+                <td valign="top">用户名：</td>
+                <td><input type="text" id="user"/></td>
+            </tr>
+            <tr>
+                <td valign="top">密码：</td>
+                <td><input type="password" id="password"/></td>
+            </tr>
+            <tr>
+                <th><input type="button" value="登陆" id="log"/></th>
+                <th><input type="button" value="注册" id="sign"/>&nbsp;<input type="button" value="清除用户记录" id="clear"/>
+                </th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="ChoiceFrame" id="ChoiceFrame">
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#Ques_1" data-toggle="tab" data-edit=""
+                                                      id="interest">趣味测试<img src="resource/img/1.jpg"></a></li>
+            <li role="presentation"><a href="#Ques_1" data-toggle="tab" data-edit="1" id="cartoon">IT测试</a></li>
+            <li role="presentation"><a href="#Ques_1" data-toggle="tab" data-edit="2" id="basketball">篮球测试</a></li>
+            <li role="presentation"><a href="#Ques_1" data-toggle="tab" data-edit="3" id="rina">女神测试</a></li>
+        </ul>
+    </div>
+
+    <div class="tab-content" id="t_cont">
+        <div class="tab-pane fade in active" id="Ques_1">
+            <div class="frame">
+                <p id="1" class="que"></p>
+                <input type="checkbox" value="A" id="answer1" class="col-md-1"/><label for="answer1" class="col-md-11">
+                <p id="2"></p></label>
+                <input type="checkbox" value="B" id="answer2" class="col-md-1"/><label for="answer2" class="col-md-11">
+                <p id="3"></p></label>
+                <input type="checkbox" value="C" id="answer3" class="col-md-1"/><label for="answer3" class="col-md-11">
+                <p id="4"></p></label>
+                <hr/>
+                <input type="button" id="last" value="上一题"/> <input type="button" value="下一题" id="next"/>&nbsp;<span
+                    id="qnum">x/x</span>
+                &nbsp;&nbsp;<input type="button" id="again" value="重新测试"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="imgs">
+        <img src="" id="end">
+    </div>
+    <span id="word"></span>
+    <img class="rina" src="resource/img/ac4bd11373f082028410af3c4dfbfbedab641b36.jpg">
+
+</div>
+
+</body>
+<script src="js/jquery-1.11.2.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/control.js"></script>
+<script src="js/view.js"></script>
+<script src="js/M.js"></script>
+</html>
